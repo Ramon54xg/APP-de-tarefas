@@ -1,0 +1,22 @@
+
+
+import java.sql.SQLException;
+
+public class ConnectionFactory {
+  public static final String dataBaseName = "poochecklist";
+  public static final String dataBaseUser = "root";
+  public static final String dataBasePassword = "";
+  public static final String ignoreTimezone = "?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false";
+  
+  public ConnectionFactory() {}
+  
+  public static java.sql.Connection getConnection() {
+    try {
+      return 
+        java.sql.DriverManager.getConnection(String.format("jdbc:mysql://localhost:3306/%s?useTimezone=true&serverTimezone=UTC&autoReconnect=true&useSSL=false", new Object[] { "poochecklist" }), "root", "");
+    } catch (SQLException e) {
+      e.printStackTrace();
+      throw new RuntimeException(e);
+    }
+  }
+}
