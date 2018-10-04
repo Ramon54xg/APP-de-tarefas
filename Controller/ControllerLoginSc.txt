@@ -1,0 +1,41 @@
+import Controller.Main;
+import java.io.PrintStream;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+
+public class ControllerLoginSc {
+    @FXML
+    private Button buttonlogin;
+    @FXML
+    private CheckBox boxremember;
+    @FXML
+    private PasswordField tfpass;
+    @FXML
+    private TextField tfuser;
+    @FXML
+    private Button buttonregister;
+
+    @FXML
+    void actbuttonlogin(ActionEvent event) {
+        Main.changeScreen((String)"task");
+        System.out.println("Voce clicou!");
+    }
+
+    @FXML
+    void actbuttonregister(ActionEvent event) {
+        Main.changeScreen((String)"register");
+    }
+
+    @FXML
+    void initialize() {
+        assert (this.buttonlogin != null);
+        assert (this.boxremember != null);
+        assert (this.tfpass != null);
+        assert (this.tfuser != null);
+        assert (this.buttonregister != null);
+    }
+}
